@@ -13,5 +13,36 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
  */
+
+html, body {
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+
+  #gallery {
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    background: #333;
+    color: #eee;
+
+    header {
+      position: absolute;
+      right: 0;
+      padding: 1em;
+    }
+  }
+
+  #info {
+    position: absolute;
+    max-width: 50%;
+    height: 100%;
+    right: -40%;
+    top: 0;
+    background: #fff;
+    padding: 2em;
+  }
+}

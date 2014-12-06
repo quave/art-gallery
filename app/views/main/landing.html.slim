@@ -1,1 +1,18 @@
-h1 Fine Art Gallery
+#gallery
+  header
+    dl.sub-nav
+      dd.category-all
+        a Все
+      - @categories.each do |c|
+        dd{class= "category-#{c.id}"}
+          a= c.name
+
+  ul.image-list
+    - @works.each do |w|
+      li{class="work-#{w.id}"}
+        img{src="#{BASE_IMG_DIR}#{w.image_name}"}
+
+#info
+  header
+    h1 Alyona Kanevskaya the Artist
+  .content
