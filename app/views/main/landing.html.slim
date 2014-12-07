@@ -2,17 +2,53 @@
   header
     dl.sub-nav
       dd.category-all
-        a Все
+        a.category.category-0{data-id=0} Все
       - @categories.each do |c|
-        dd{class= "category-#{c.id}"}
+        dd.category{class= "category-#{c.id}" data-id=c.id}
           a= c.name
 
-  ul.image-list
-    - @works.each do |w|
-      li{class="work-#{w.id}"}
-        img{src="#{BASE_IMG_DIR}#{w.image_name}"}
+  .works.row
+    .col-1.columns.medium-4
+      - @works.each_with_index do |w, i|
+        -if i % 3 == 0
+          = render w
 
-#info
-  header
-    h1 Alyona Kanevskaya the Artist
-  .content
+    .col-2.columns.medium-4
+      - @works.each_with_index do |w, i|
+        -if i % 3 == 1
+          = render w
+
+    .col-3.columns.medium-4
+      - @works.each_with_index do |w, i|
+        -if i % 3 == 2
+          = render w
+
+  #info
+    .handle
+      .arrow
+    header
+      h1 Alyona Kanevskaya the Artist
+    .content
+      h4 Я могу
+      ul
+        li Нарисовать вам портрет
+        li Нарисовать картину на заказ
+        li Проиллюстрировать книгу
+        li Обучить рисованию и живописи
+      h4 Со мной можно связаться
+      dl
+        dt По телефону
+        dd
+          i.fa.fa-phone
+          | &nbsp;+79688412045
+        dt По скайпу
+        dd
+          i.fa.fa-skype
+          | &nbsp;alonkanevslaya
+        dt Электропочтой
+        dd
+          i.fa.fa-envelope
+          | &nbsp;alyona.kanevskaya@gmail.com
+      h4 Как я этому научилась
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc quis eros sodales faucibus in sed risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus quis nisl sapien. Donec semper pulvinar vulputate. Suspendisse aliquet nibh in tempor volutpat. Nunc sed vulputate arcu. Aliquam nisl ex, suscipit ut metus eget, dignissim scelerisque lectus.
+      p Duis sed elementum lectus. Nullam aliquam luctus elit, non fermentum turpis euismod non. Quisque finibus sodales arcu, ut vehicula diam finibus sit amet. Pellentesque sed velit sit amet mi posuere feugiat. Nulla dolor erat, tempus eu turpis sed, tristique fringilla enim. Nam vehicula enim sit amet tellus mattis, ornare faucibus nunc maximus. Curabitur tincidunt metus metus, non blandit felis mollis ut. Cras nisl enim, venenatis ac suscipit ac, commodo viverra risus. Duis pulvinar, erat sed tincidunt condimentum, libero arcu facilisis lacus, et volutpat erat libero tincidunt felis. Phasellus in lectus in orci tincidunt vestibulum sagittis ultrices sapien. Suspendisse imperdiet ultricies orci, id accumsan metus vestibulum sit amet. Morbi vel vehicula eros. Integer viverra bibendum nunc eget placerat.

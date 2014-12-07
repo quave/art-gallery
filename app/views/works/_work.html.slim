@@ -1,0 +1,6 @@
+.work{class="work-#{work.id} cat-#{work.category.id}"}
+  img{src="#{Rails.application.config.images_path}#{work.image_name}"}
+  .info
+    h5.name= work.name
+    .desc= work.description unless work.description.nil?
+    span.label.price= work.price.nil? ? 'Продано' : "$#{work.price}"

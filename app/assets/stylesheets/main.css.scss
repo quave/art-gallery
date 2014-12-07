@@ -1,3 +1,79 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.main {
+  overflow-x: hidden;
+
+  $info-off-width: 10%;
+  $info-on-width: 60%;
+
+  #gallery {
+    position: absolute;
+    width: 100%;
+    padding-right: $info-off-width;
+    min-height: 100%;
+    background: #333;
+    color: #eee;
+
+    > header {
+      @extend .right;
+      padding: 1em;
+    }
+    .works {
+      @extend .clearfix;
+      margin-top: 5rem;
+
+      .work {
+        margin-bottom: 1rem;
+
+        img {
+          width: 100%;
+        }
+
+        .info {
+          background: #555;
+          padding: 1rem;
+          width: 100%;
+        }
+      }
+    }
+
+    #info {
+      color: #444;
+      position: absolute;
+      width: $info-on-width;
+      min-height: 100%;
+      top: 0;
+      background: #fff;
+      padding: 2em 4em;
+      right: 0;
+
+      .handle {
+        @include side-radius(left, 10px);
+        position: absolute;
+        width: 1.5rem;
+        height: 5rem;
+        background: #ccc;
+        left: -1.5rem;
+        top: 150px;
+        cursor: pointer;
+
+        .arrow {
+          @extend .fa, .fa-chevron-right;
+          color: #444;
+          margin-top: 2rem;
+          margin-left: .4rem;
+        }
+      }
+
+      &.off {
+        .handle .arrow {
+          @extend .fa-chevron-left;
+          margin-left: .3rem;
+        }
+        right: ($info-off-width - $info-on-width);
+      }
+    }
+  }
+}

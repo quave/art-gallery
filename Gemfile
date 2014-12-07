@@ -3,17 +3,21 @@ ruby '2.0.0'
 
 gem 'rails'
 gem 'sqlite3'
+gem 'slim-rails'
+gem 'devise'
+gem 'simple_form', '>= 3.1.0'
+gem 'turbolinks'
+gem 'jbuilder'
+gem 'tzinfo-data'
+
+# assets
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'foundation-rails'
-gem 'slim-rails'
-gem 'devise'
-gem 'simple_form', '>= 3.1.0.rc1'
+gem "font-awesome-rails"
 gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder'
-gem 'tzinfo-data'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   gem 'factory_girl_rails'
