@@ -20,4 +20,19 @@ html, body {
   width: 100%;
 }
 
+footer {
+  background: #730E15;
+  color: #fff;
+  width: 100%;
+  height: 100px;
+  padding: 2rem 4rem;
+
+  .words {
+    font-size: 150%;
+    .art {
+      color: #888;
+    }
+  }
+}
+
 @import 'main';

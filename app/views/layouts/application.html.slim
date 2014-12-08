@@ -4,11 +4,17 @@ html[lang="en"]
     meta[charset="utf-8"]
     meta[name="viewport" content="width=device-width, initial-scale=1.0"]
     title
-      = content_for?(:title) ? yield(:title) : 'Alyona Kanevskaya'
+      = content_for?(:title) ? yield(:title) : 'Алена Каневская'
     = stylesheet_link_tag    "application"
     = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags
   body{class="#{controller_name} #{action_name}"}
     = yield
-
+    footer
+      span.words
+        | The E
+        span.art art
+        | h without
+        span.art  art
+        |  is just “Eh”
     = javascript_include_tag "application"

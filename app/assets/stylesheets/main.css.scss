@@ -9,7 +9,7 @@ body.main {
   $info-on-width: 60%;
 
   #gallery {
-    position: absolute;
+    position: relative;
     width: 100%;
     padding-right: $info-off-width;
     min-height: 100%;
@@ -22,7 +22,7 @@ body.main {
     }
     .works {
       @extend .clearfix;
-      margin-top: 5rem;
+      padding-top: 5rem;
 
       .work {
         margin-bottom: 1rem;
