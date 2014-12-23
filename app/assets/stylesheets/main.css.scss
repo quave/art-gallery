@@ -13,8 +13,8 @@ body.main {
     width: 100%;
     padding-right: $info-off-width;
     min-height: 100%;
-    background: #333;
-    color: #eee;
+    background: #eaeaea;
+    color: #8b8680;
 
     > header {
       @extend .right;
@@ -32,7 +32,8 @@ body.main {
         }
 
         .info {
-          background: #555;
+          background: #8b8680;
+          color: #d9d0c7;
           padding: 1rem;
           width: 100%;
         }
@@ -40,28 +41,39 @@ body.main {
     }
 
     #info {
-      color: #444;
+      $shadow-color: #eee;
+      background: #333139;
+      color: #fff;
       position: absolute;
       width: $info-on-width;
       min-height: 100%;
       top: 0;
-      background: #fff;
       padding: 2em 4em;
       right: 0;
+
+      $shadow-color: #222;
+      -webkit-box-shadow: -10px 0px 25px -6px $shadow-color;
+      -moz-box-shadow: -10px 0px 25px -6px $shadow-color;
+      box-shadow: -10px 0px 25px -6px $shadow-color;
+
+      h1, h2, h3, h4, h5, h6 { color: #888; }
 
       .handle {
         @include side-radius(left, 10px);
         position: absolute;
         width: 1.5rem;
         height: 5rem;
-        background: #ccc;
+        background: #333139;
         left: -1.5rem;
         top: 150px;
         cursor: pointer;
+        -webkit-box-shadow: -10px 0px 25px -6px $shadow-color;
+        -moz-box-shadow: -10px 0px 25px -6px $shadow-color;
+        box-shadow: -10px 0px 25px -6px $shadow-color;
 
         .arrow {
           @extend .fa, .fa-chevron-right;
-          color: #444;
+          color: #eaeaea;
           margin-top: 2rem;
           margin-left: .4rem;
         }
@@ -75,5 +87,11 @@ body.main {
         right: ($info-off-width - $info-on-width);
       }
     }
+  }
+
+  .words {
+    margin: 2rem 0 1rem;
+    color: #555;
+    .art { color: #55a; }
   }
 }
