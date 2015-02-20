@@ -26,3 +26,5 @@ Work.create name: 'fordlineaobstacles.jpg', description: 'fordlineaobstacles.jpg
 Work.create name: 'thesugargrandmas.jpg', description: 'thesugargrandmas.jpg loong thesugargrandmas.jpg desc thesugargrandmas.jpg', category: cat5, image_name: 'thesugargrandmas.jpg', price: 200
 Work.create name: 'mtvtoysmall.jpg', description: 'mtvtoysmall.jpg loong mtvtoysmall.jpg desc mtvtoysmall.jpg', category: cat5, image_name: 'mtvtoysmall.jpg', price: 200
 Work.create name: 'vw-touareg_lt-50x35-01-ing.jpg', description: 'vw-touareg_lt-50x35-01-ing.jpg loong vw-touareg_lt-50x35-01-ing.jpg desc vw-touareg_lt-50x35-01-ing.jpg', category: cat5, image_name: 'vw-touareg_lt-50x35-01-ing.jpg', price: 200
+
+User.create email: 'admin@admin.ru', password: 'Sophia0!'

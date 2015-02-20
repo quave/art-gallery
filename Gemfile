@@ -9,6 +9,8 @@ gem 'simple_form', '>= 3.1.0'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'tzinfo-data'
+gem 'devise'
+gem 'rails_admin'
 
 # assets
 gem 'sass-rails'
