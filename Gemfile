@@ -11,6 +11,7 @@ gem 'jbuilder'
 gem 'tzinfo-data'
 gem 'devise'
 gem 'rails_admin'
+gem 'paperclip'
 
 # assets
 gem 'sass-rails'

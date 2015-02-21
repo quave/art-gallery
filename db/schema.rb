@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150220174338) do
+ActiveRecord::Schema.define(version: 20150220193256) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -38,13 +38,16 @@ ActiveRecord::Schema.define(version: 20150220174338) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "works", force: true do |t|
-    t.string   "name",        null: false
+    t.string   "name",               null: false
     t.text     "description"
-    t.integer  "category_id", null: false
-    t.string   "image_name",  null: false
+    t.integer  "category_id",        null: false
     t.integer  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end

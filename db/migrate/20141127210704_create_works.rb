@@ -4,7 +4,6 @@ class CreateWorks < ActiveRecord::Migration
       t.string :name, null: false
       t.text :description
       t.references :category, null: false
-      t.string :image_name, null: false
       t.integer :price
 
       t.timestamps
