@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20150220193256) do
     t.integer  "category_id",                        null: false
     t.integer  "price"
     t.boolean  "enabled",             default: true, null: false
+    t.integer  "order",               default: 0,    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
