@@ -25,6 +25,7 @@ gem 'jquery-ui-rails'
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'quiet_assets'
+  gem 'seed_dump'
 end
 
 group :test do

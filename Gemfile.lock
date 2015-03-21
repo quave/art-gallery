@@ -183,6 +183,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    seed_dump (3.2.2)
+      activerecord (~> 4)
+      activesupport (~> 4)
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -249,6 +252,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails
   sdoc
+  seed_dump
   simple_form (>= 3.1.0)
   slim-rails
   sqlite3

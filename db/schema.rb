@@ -14,7 +14,8 @@
 ActiveRecord::Schema.define(version: 20150220193256) do
 
   create_table "categories", force: true do |t|
-    t.string   "name"
+    t.string   "name", null: false
+    t.integer   "order", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,10 +39,12 @@ ActiveRecord::Schema.define(version: 20150220193256) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "works", force: true do |t|
-    t.string   "name",               null: false
+    t.string   "name",                               null: false
     t.text     "description"
-    t.integer  "category_id",        null: false
+    t.string   "size",                default: "",   null: false
+    t.integer  "category_id",                        null: false
     t.integer  "price"
+    t.boolean  "enabled",             default: true, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"

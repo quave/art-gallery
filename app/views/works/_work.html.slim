@@ -2,5 +2,6 @@
   =image_tag work.image.url
   .info
     h5.name= work.name
-    .desc= work.description unless work.description.nil?
+    .desc= work.description unless work.description.blank?
+    .size= work.size unless work.size.blank?
     span.label.price= work.price.nil? ? 'Продано' : "#{work.price}₽"
