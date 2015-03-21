@@ -1,28 +1,31 @@
-cat1 = Category.create! name: 'Рисунок'
-cat2 = Category.create! name: 'Живопись'
-cat3 = Category.create! name: 'Иллюстрации'
-cat4 = Category.create! name: 'Литография'
-cat5 = Category.create! name: 'Гравюра'
+User.create email: 'admin@admin.ru', password: 'Sophia0!'
 
-Work.create name: 'orbitarcimboldo.jpg', description: 'orbitarcimboldo.jpg loong orbitarcimboldo.jpg desc orbitarcimboldo.jpg', category: cat1, image_name: 'orbitarcimboldo.jpg', price: 200
-Work.create name: '101butt3.jpg', description: '101butt3.jpg loong 101butt3.jpg desc 101butt3.jpg', category: cat1, image_name: '101butt3.jpg', price: 200
-Work.create name: 'kamitei2.jpg', description: 'kamitei2.jpg loong kamitei2.jpg desc kamitei2.jpg', category: cat1, image_name: 'kamitei2.jpg', price: 200
-Work.create name: 'listermintambulance.jpg', description: 'listermintambulance.jpg loong listermintambulance.jpg desc listermintambulance.jpg', category: cat1, image_name: 'listermintambulance.jpg', price: 200
-Work.create name: 'ace_porcelain.jpg', description: 'ace_porcelain.jpg loong ace_porcelain.jpg desc ace_porcelain.jpg', category: cat1, image_name: 'ace_porcelain.jpg', price: 200
-Work.create name: 'mercedesgpsparis.jpg', description: 'mercedesgpsparis.jpg loong mercedesgpsparis.jpg desc mercedesgpsparis.jpg', category: cat2, image_name: 'mercedesgpsparis.jpg', price: 200
-Work.create name: 'baygon_livingroom.jpg', description: 'baygon_livingroom.jpg loong baygon_livingroom.jpg desc baygon_livingroom.jpg', category: cat2, image_name: 'baygon_livingroom.jpg', price: 200
-Work.create name: 'bmw_typo_landscape_3.jpg', description: 'bmw_typo_landscape_3.jpg loong bmw_typo_landscape_3.jpg desc bmw_typo_landscape_3.jpg', category: cat2, image_name: 'bmw_typo_landscape_3.jpg', price: 200
-Work.create name: 'mercedesgpsmadrid.jpg', description: 'mercedesgpsmadrid.jpg loong mercedesgpsmadrid.jpg desc mercedesgpsmadrid.jpg', category: cat2, image_name: 'mercedesgpsmadrid.jpg', price: 200
-Work.create name: 'mmblue.jpg', description: 'mmblue.jpg loong mmblue.jpg desc mmblue.jpg', category: cat2, image_name: 'mmblue.jpg', price: 200
-Work.create name: 'ww_lift.jpg', description: 'ww_lift.jpg loong ww_lift.jpg desc ww_lift.jpg', category: cat3, image_name: 'ww_lift.jpg', price: 200
-Work.create name: 'livefast_dp_460x300_baby.jpg', description: 'livefast_dp_460x300_baby.jpg loong livefast_dp_460x300_baby.jpg desc livefast_dp_460x300_baby.jpg', category: cat3, image_name: 'livefast_dp_460x300_baby.jpg', price: 200
-Work.create name: 'hansarooster.jpg', description: 'hansarooster.jpg loong hansarooster.jpg desc hansarooster.jpg', category: cat3, image_name: 'hansarooster.jpg', price: 200
-Work.create name: 'kamitei3.jpg', description: 'kamitei3.jpg loong kamitei3.jpg desc kamitei3.jpg', category: cat3, image_name: 'kamitei3.jpg', price: 200
-Work.create name: 'skodahyppo.jpg', description: 'skodahyppo.jpg loong skodahyppo.jpg desc skodahyppo.jpg', category: cat3, image_name: 'skodahyppo.jpg', price: 200
-Work.create name: 'traffic_lights_jeep.jpg', description: 'traffic_lights_jeep.jpg loong traffic_lights_jeep.jpg desc traffic_lights_jeep.jpg', category: cat4, image_name: 'traffic_lights_jeep.jpg', price: 200
-Work.create name: 'ecostorestreet1.jpg', description: 'ecostorestreet1.jpg loong ecostorestreet1.jpg desc ecostorestreet1.jpg', category: cat4, image_name: 'ecostorestreet1.jpg', price: 200
-Work.create name: 'fly_1.jpg', description: 'fly_1.jpg loong fly_1.jpg desc fly_1.jpg', category: cat4, image_name: 'fly_1.jpg', price: 200
-Work.create name: 'fordlineaobstacles.jpg', description: 'fordlineaobstacles.jpg loong fordlineaobstacles.jpg desc fordlineaobstacles.jpg', category: cat5, image_name: 'fordlineaobstacles.jpg', price: 200
-Work.create name: 'thesugargrandmas.jpg', description: 'thesugargrandmas.jpg loong thesugargrandmas.jpg desc thesugargrandmas.jpg', category: cat5, image_name: 'thesugargrandmas.jpg', price: 200
-Work.create name: 'mtvtoysmall.jpg', description: 'mtvtoysmall.jpg loong mtvtoysmall.jpg desc mtvtoysmall.jpg', category: cat5, image_name: 'mtvtoysmall.jpg', price: 200
-Work.create name: 'vw-touareg_lt-50x35-01-ing.jpg', description: 'vw-touareg_lt-50x35-01-ing.jpg loong vw-touareg_lt-50x35-01-ing.jpg desc vw-touareg_lt-50x35-01-ing.jpg', category: cat5, image_name: 'vw-touareg_lt-50x35-01-ing.jpg', price: 200
+Category.create!([
+  {name: "Портрет", order: 0},
+  {name: "Натюрморт", order: 1},
+  {name: "Пейзаж", order: 2},
+  {name: "Графика", order: 3},
+  {name: "Этюды", order: 0},
+  {name: "Иллюстрация", order: 0}
+])
+
+Work.create!([
+  {name: "Этюд 1", description: "Белые ночи. Архангельская область.\r\nБумага, масляная пастель.", size: "25х30см", category_id: 5, price: nil, enabled: true, image_file_name: "DSC_2922.jpg", image_content_type: "image/jpeg", image_file_size: 2505455, image_updated_at: "2015-03-21 16:56:53"},
+  {name: "Натюрморт Trompe-l'œil", description: "Холст, масло", size: "60х60см", category_id: 2, price: nil, enabled: true, image_file_name: "DSC_1079.jpg", image_content_type: "image/jpeg", image_file_size: 1014659, image_updated_at: "2015-02-21 17:17:57"},
+  {name: "Плакат «Русские Сезоны»", description: "Бумага, акварель, пастель, цветной карандаш", size: "60х90см", category_id: 4, price: 4500, enabled: true, image_file_name: "DSC_1108.jpg", image_content_type: "image/jpeg", image_file_size: 608000, image_updated_at: "2015-02-21 17:16:09"},
+  {name: "Портрет", description: "Бумага, карандаш", size: "30х40см", category_id: 1, price: nil, enabled: true, image_file_name: "DSC_2720.jpg", image_content_type: "image/jpeg", image_file_size: 427355, image_updated_at: "2015-02-21 17:14:14"},
+  {name: "Чернореченский каньон", description: "Бумага, масляная пастель", size: "19х21см", category_id: 5, price: 500, enabled: true, image_file_name: "DSC_1064-2.jpg", image_content_type: "image/jpeg", image_file_size: 1044388, image_updated_at: "2015-02-21 17:11:54"},
+  {name: "Обнаженная модель", description: "Холст, масло\r\n40х80см", size: "", category_id: 1, price: 5000, enabled: true, image_file_name: "DSC_1088.jpg", image_content_type: "image/jpeg", image_file_size: 404424, image_updated_at: "2015-02-21 17:10:05"},
+  {name: "Крым, ночной берег", description: "Холст, масло, деревянная рама", size: "30х40см", category_id: 3, price: 12000, enabled: true, image_file_name: "DSC_1113.jpg", image_content_type: "image/jpeg", image_file_size: 445911, image_updated_at: "2015-02-21 17:08:41"},
+  {name: "Портрет беременной женщины", description: "Бумага, соус", size: "55х77см", category_id: 1, price: nil, enabled: true, image_file_name: "DSC_2723.jpg", image_content_type: "image/jpeg", image_file_size: 481200, image_updated_at: "2015-02-21 17:07:40"},
+  {name: "Чернореченский каньон", description: "Бумага, масляная пастель", size: "30х21см", category_id: 5, price: 500, enabled: true, image_file_name: "DSC_1066-2.jpg", image_content_type: "image/jpeg", image_file_size: 831378, image_updated_at: "2015-02-21 17:06:03"},
+  {name: "Портрет", description: "Холст, масло", size: "60х80см", category_id: 1, price: 7000, enabled: true, image_file_name: "DSC_1099.jpg", image_content_type: "image/jpeg", image_file_size: 645558, image_updated_at: "2015-02-21 17:01:56"},
+  {name: "Натюрморт с утварью", description: "Бумага, темпера", size: "47х26см", category_id: 2, price: 3000, enabled: true, image_file_name: "DSC_1118.jpg", image_content_type: "image/jpeg", image_file_size: 513328, image_updated_at: "2015-02-21 16:59:59"},
+  {name: "Натюрморт с овощами и кувшином", description: "Холаст, масло", size: "70х60см", category_id: 2, price: nil, enabled: true, image_file_name: "DSC_7941.jpg", image_content_type: "image/jpeg", image_file_size: 1010613, image_updated_at: "2015-02-21 16:52:13"},
+  {name: "Портрет спящей", description: "Бумага, акварель", size: "49х69см", category_id: 1, price: 4000, enabled: true, image_file_name: "DSC_1076.jpg", image_content_type: "image/jpeg", image_file_size: 483398, image_updated_at: "2015-02-21 15:14:47"},
+  {name: "Натюрморт с овощами", description: "Холст, масло", size: "80х60см", category_id: 2, price: 9000, enabled: true, image_file_name: "DSC_1106.jpg", image_content_type: "image/jpeg", image_file_size: 763462, image_updated_at: "2015-02-21 15:09:57"},
+  {name: "Портрет дочери", description: "Бумага, красный и простой карандаши", size: "", category_id: 1, price: nil, enabled: true, image_file_name: "DSC_2718.jpg", image_content_type: "image/jpeg", image_file_size: 419860, image_updated_at: "2015-02-21 15:07:16"},
+  {name: "Натюрморт с мандолиной", description: "Холст, масло", size: "70х40см", category_id: 2, price: nil, enabled: true, image_file_name: "DSC_7950.jpg", image_content_type: "image/jpeg", image_file_size: 812535, image_updated_at: "2015-02-21 15:06:01"}
+])
+
+

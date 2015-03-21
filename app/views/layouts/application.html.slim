@@ -9,5 +9,9 @@ html[lang="en"]
     = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags
   body{class="#{controller_name} #{action_name}"}
+    - if false
+      p.notice= notice if notice
+      p.alert= alert if alert
+
     = yield
     = javascript_include_tag "application"

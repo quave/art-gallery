@@ -1,6 +1,7 @@
 .work{class="work-#{work.id} cat-#{work.category.id}"}
-  img{src="#{Rails.application.config.images_path}#{work.image_name}"}
+  =image_tag work.image.url
   .info
     h5.name= work.name
-    .desc= work.description unless work.description.nil?
-    span.label.price= work.price.nil? ? 'Продано' : "$#{work.price}"
+    .desc= work.description unless work.description.blank?
+    .size= work.size unless work.size.blank?
+    span.label.price= work.price.nil? ? 'Продано' : "#{work.price}₽"

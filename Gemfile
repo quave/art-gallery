@@ -9,6 +9,9 @@ gem 'simple_form', '>= 3.1.0'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'tzinfo-data'
+gem 'devise'
+gem 'rails_admin'
+gem 'paperclip'
 
 # assets
 gem 'sass-rails'
@@ -22,6 +25,7 @@ gem 'jquery-ui-rails'
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'quiet_assets'
+  gem 'seed_dump'
 end
 
 group :test do
