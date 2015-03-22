@@ -2,6 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+setHash = (hash) ->
+  window.location.hash = hash
+
 $ ->
   return unless $('body').hasClass 'main'
 
@@ -32,6 +35,8 @@ $ ->
     $('#popup-modal')
       .empty()
       .append(modal)
+
+    setHash($(this).prop('class').match(/work-\d+/)[0])
   )
   .magnificPopup {
     type: 'inline',
@@ -39,8 +44,14 @@ $ ->
     modal: true,
     position: 'auto',
     alignTop: true,
-    mainClass: 'mfp-fade'
+    mainClass: 'mfp-fade',
+    callbacks: {
+      close: ->
+        setHash('')
+    }
   }
+
+  $("#gallery .#{window.location.hash.substr(1)}").click()
 
 $(document).on 'click', '.popup-modal-dismiss', (e) ->
   e.preventDefault()
