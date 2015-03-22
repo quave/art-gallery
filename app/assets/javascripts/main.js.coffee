@@ -18,3 +18,30 @@ $ ->
 
   $(window).scroll ->
     $('#info .handle').animate {top: $(window).scrollTop() + 150 }, 10
+
+
+  $('#gallery .work').click( ->
+    modal = $(this)
+      .clone()
+      .addClass('original')
+      .addClass('popup-modal-dismiss')
+    img = modal.find('img')
+    src = img.prop('src').replace('preview', 'original')
+    img.prop('src', src);
+
+    $('#popup-modal')
+      .empty()
+      .append(modal)
+  )
+  .magnificPopup {
+    type: 'inline',
+    preloader: false,
+    modal: true,
+    position: 'auto',
+    alignTop: true,
+    mainClass: 'mfp-fade'
+  }
+
+$(document).on 'click', '.popup-modal-dismiss', (e) ->
+  e.preventDefault()
+  $.magnificPopup.close()

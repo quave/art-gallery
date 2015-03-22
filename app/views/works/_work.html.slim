@@ -1,5 +1,5 @@
-.work{class="work-#{work.id} cat-#{work.category.id}"}
-  =image_tag work.image.url
+.work{class="work-#{work.id} cat-#{work.category.id}" data-mfp-src="#popup-modal"}
+  =image_tag work.image.url(:preview)
   .info
     h5.name= work.name
     .desc= work.description unless work.description.blank?

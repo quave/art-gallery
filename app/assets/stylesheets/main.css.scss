@@ -23,21 +23,6 @@ body.main {
     .works {
       @extend .clearfix;
       padding-top: 5rem;
-
-      .work {
-        margin-bottom: 1rem;
-
-        img {
-          width: 100%;
-        }
-
-        .info {
-          background: #8b8680;
-          color: #d9d0c7;
-          padding: 1rem;
-          width: 100%;
-        }
-      }
     }
 
     #info {
@@ -89,9 +74,51 @@ body.main {
     }
   }
 
+  .work {
+    margin-bottom: 1rem;
+
+    &.original {
+      position: absolute;
+      width: 80%;
+      left: 10%;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .info {
+      background: #8b8680;
+      color: #d9d0c7;
+      padding: 1rem;
+      width: 100%;
+    }
+  }
+
   .words {
     margin: 2rem 0 1rem;
-    color: #555;
+    color: $charcoal;
     .art { color: #55a; }
   }
+
+  /* magnificent popup animations */
+  /* content at start */
+  .mfp-fade.mfp-wrap .mfp-content {
+    opacity: 0;
+
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+  /* content animate it */
+  .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+    opacity: 1;
+  }
+  /* content animate out */
+  .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+    opacity: 0;
+
+  }
+
+
 }

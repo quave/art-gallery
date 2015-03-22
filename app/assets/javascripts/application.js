@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require jquery.magnific-popup.min
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
