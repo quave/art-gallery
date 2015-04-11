@@ -1,4 +1,4 @@
-.work{class="work-#{work.id} cat-#{work.category.id}" data-mfp-src="#popup-modal"}
+.work{class="work-#{work.id} cat-#{work.category.id}" data-mfp-src="#popup-modal" data-order=work.order}
   =image_tag work.image.url(:preview)
   .info
     h5.name= work.name

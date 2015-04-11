@@ -9,21 +9,13 @@
       dd.info
         = link_to 'Обо мне', action: :info
 
-  .works.row
+  #works.row
+    .buff
+      - @works.each do |w|
+        = render w
     .col-1.columns.medium-4
-      - @works.each_with_index do |w, i|
-        -if i % 3 == 0
-          = render w
-
     .col-2.columns.medium-4
-      - @works.each_with_index do |w, i|
-        -if i % 3 == 1
-          = render w
-
     .col-3.columns.medium-4
-      - @works.each_with_index do |w, i|
-        -if i % 3 == 2
-          = render w
 
   .footer.row
     .columns.medium-12

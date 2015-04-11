@@ -17,9 +17,15 @@ body.main {
         @extend .right;
         padding: 1em;
       }
-      .works {
+      #works {
         @extend .clearfix;
         padding-top: 5rem;
+
+        .buff {
+          position: absolute;
+          width: 200px;
+          left: -1000px;
+        }
       }
     }
 
@@ -79,7 +85,7 @@ body.main {
     h1, h2, h3, h4, h5, h6 { color: #888; }
 
     .me {
-      margin-top: 2em;
+      margin: 2em 0;
     }
   }
 }

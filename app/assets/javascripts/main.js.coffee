@@ -5,23 +5,42 @@
 setHash = (hash) ->
   window.location.hash = hash
 
+arrangeWorks = (cat) ->
+  $('#works .columns .work').appendTo $('#works .buff')
+
+  catName = if (typeof(cat) != 'undefined' && cat) then ('.cat-' + cat) else ''
+
+  cols = [
+    {
+      element: $('#works .col-1'),
+      height: 0,
+    },
+    {
+      element: $('#works .col-2'),
+      height: 0,
+    },
+    {
+      element: $('#works .col-3'),
+      height: 0,
+    }
+  ]
+
+  works = $("#works .buff .work#{catName}")
+  .sort (a, b) -> parseInt($(a).data('order')) - parseInt($(b).data('order'))
+
+  for w in works
+    col = cols.sort((a, b) -> a.height - b.height)[0]
+    col.element.append(w)
+    col.height = col.element.height()
+
 $ ->
   return unless $('body').hasClass 'main'
+  console.profile()
+  arrangeWorks()
 
   $('#gallery header .category').click ->
     id = $(this).data 'id'
-    if !id
-      $('.work').fadeIn 200
-    else
-      $('.work').fadeOut 200
-      $(".work.cat-#{id}").fadeIn 200
-
-  $('#info .handle').click ->
-    $('#info').toggleClass 'off', 500, 'easeInOutQuint'
-
-  $(window).scroll ->
-    $('#info .handle').animate {top: $(window).scrollTop() + 150 }, 10
-
+    arrangeWorks(id)
 
   $('#gallery .work').click( ->
     modal = $(this)
@@ -51,7 +70,10 @@ $ ->
     }
   }
 
-  $("#gallery .#{window.location.hash.substr(1)}").click()
+  window.location.hash.substr(1) && $("#gallery .#{window.location.hash.substr(1)}").click()
+
+  console.profileEnd()
+
 
 $(document).on 'click', '.popup-modal-dismiss', (e) ->
   e.preventDefault()
