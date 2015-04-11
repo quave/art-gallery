@@ -5,4 +5,8 @@ class MainController < ApplicationController
     @works = Work.includes(:category).all
   end
 
+  def info
+    render :info
+  end
+
 end

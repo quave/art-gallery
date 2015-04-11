@@ -3,122 +3,83 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.main {
-  overflow-x: hidden;
+  &.landing {
+    overflow-x: hidden;
 
-  $info-off-width: 10%;
-  $info-on-width: 60%;
-
-  #gallery {
-    position: relative;
-    width: 100%;
-    padding-right: $info-off-width;
-    min-height: 100%;
-    background: #eaeaea;
-    color: #8b8680;
-
-    > header {
-      @extend .right;
-      padding: 1em;
-    }
-    .works {
-      @extend .clearfix;
-      padding-top: 5rem;
-    }
-
-    #info {
-      $shadow-color: #eee;
-      background: #333139;
-      color: #fff;
-      position: absolute;
-      width: $info-on-width;
+    #gallery {
+      position: relative;
+      width: 100%;
       min-height: 100%;
-      top: 0;
-      padding: 2em 4em;
-      right: 0;
+      background: #eaeaea;
+      color: #8b8680;
 
-      $shadow-color: #222;
-      -webkit-box-shadow: -10px 0px 25px -6px $shadow-color;
-      -moz-box-shadow: -10px 0px 25px -6px $shadow-color;
-      box-shadow: -10px 0px 25px -6px $shadow-color;
+      > header {
+        @extend .right;
+        padding: 1em;
+      }
+      .works {
+        @extend .clearfix;
+        padding-top: 5rem;
+      }
+    }
 
-      h1, h2, h3, h4, h5, h6 { color: #888; }
+    .work {
+      margin-bottom: 1rem;
 
-      .handle {
-        @include side-radius(left, 10px);
+      &.original {
         position: absolute;
-        width: 1.5rem;
-        height: 5rem;
-        background: #333139;
-        left: -1.5rem;
-        top: 150px;
-        cursor: pointer;
-        -webkit-box-shadow: -10px 0px 25px -6px $shadow-color;
-        -moz-box-shadow: -10px 0px 25px -6px $shadow-color;
-        box-shadow: -10px 0px 25px -6px $shadow-color;
-
-        .arrow {
-          @extend .fa, .fa-chevron-right;
-          color: #eaeaea;
-          margin-top: 2rem;
-          margin-left: .4rem;
-        }
+        width: 80%;
+        left: 10%;
       }
 
-      &.off {
-        .handle .arrow {
-          @extend .fa-chevron-left;
-          margin-left: .3rem;
-        }
-        right: ($info-off-width - $info-on-width);
+      img {
+        width: 100%;
+      }
+
+      .info {
+        background: #8b8680;
+        color: #d9d0c7;
+        padding: 1rem;
+        width: 100%;
       }
     }
-  }
 
-  .work {
-    margin-bottom: 1rem;
-
-    &.original {
-      position: absolute;
-      width: 80%;
-      left: 10%;
+    .words {
+      margin: 2rem 0 1rem;
+      color: $charcoal;
+      .art {
+        color: #55a;
+      }
     }
 
-    img {
-      width: 100%;
+    /* magnificent popup animations */
+    /* content at start */
+    .mfp-fade.mfp-wrap .mfp-content {
+      opacity: 0;
+
+      -webkit-transition: all 0.3s ease-out;
+      -moz-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out;
     }
+    /* content animate it */
+    .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+      opacity: 1;
+    }
+    /* content animate out */
+    .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+      opacity: 0;
 
-    .info {
-      background: #8b8680;
-      color: #d9d0c7;
-      padding: 1rem;
-      width: 100%;
     }
   }
 
-  .words {
-    margin: 2rem 0 1rem;
-    color: $charcoal;
-    .art { color: #55a; }
+  &.info {
+    background: #333139;
+    color: #fff;
+
+    h1, h2, h3, h4, h5, h6 { color: #888; }
+
+    .me {
+      margin-top: 2em;
+    }
   }
-
-  /* magnificent popup animations */
-  /* content at start */
-  .mfp-fade.mfp-wrap .mfp-content {
-    opacity: 0;
-
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-  }
-  /* content animate it */
-  .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
-    opacity: 1;
-  }
-  /* content animate out */
-  .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
-    opacity: 0;
-
-  }
-
-
 }

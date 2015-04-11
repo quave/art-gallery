@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  get 'main/about'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  get '/info', to: 'main#info'
   # You can have the root of your site routed with "root"
   root 'main#landing'
 
