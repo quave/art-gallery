@@ -2,7 +2,7 @@ class MainController < ApplicationController
 
   def landing
     @categories = Category.all
-    @works = Work.includes(:category).all
+    @works = Work.includes(:category).shown
   end
 
   def info

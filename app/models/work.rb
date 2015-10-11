@@ -3,9 +3,11 @@ class Work < ActiveRecord::Base
   validates :name, presence: true
 
   def self.default_scope
-    where(enabled: true)
-      .order(:order, :created_at)
+    order(:order, :created_at)
   end
+
+  scope :shown, -> { where enabled: true }
+  scope :hidden, -> { where enabled: false }
 
   has_attached_file :image,
                     :styles => { :preview => '200' },
