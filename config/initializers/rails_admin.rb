@@ -15,6 +15,7 @@ RailsAdmin.config do |config|
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
+  config.total_columns_width = 9999999
 
   config.actions do
     dashboard                     # mandatory

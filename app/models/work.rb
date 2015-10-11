@@ -16,4 +16,28 @@ class Work < ActiveRecord::Base
 
   attr_accessor :delete_image
   before_validation { self.image.clear if self.delete_image == '1' }
+
+  rails_admin do
+    list do
+      field :id
+      field :enabled
+      field :image
+      field :name
+      field :description
+      field :size
+      field :category
+      field :price
+      field :order
+    end
+    edit do
+      field :enabled
+      field :image
+      field :name
+      field :description
+      field :size
+      field :category
+      field :price
+      field :order
+    end
+  end
 end
