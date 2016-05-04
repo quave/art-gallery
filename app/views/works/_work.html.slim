@@ -1,7 +1,8 @@
-.work{class="work-#{work.id} cat-#{work.category.id}" data-mfp-src="#popup-modal" data-order=work.order}
+.work{class="work-#{work.id} cat-#{work.category.id}" data-order=work.order}
   =image_tag work.image.url(:preview)
   .info
     h5.name= work.name
     .desc= work.description unless work.description.blank?
     .size= work.size unless work.size.blank?
-    span.label.price= work.price.nil? ? 'Продано' : "#{work.price}₽"
+    span.price= work.price.nil? ? 'Продано' : "#{work.price}₽"
+    button.btn.btn-success Хочу!

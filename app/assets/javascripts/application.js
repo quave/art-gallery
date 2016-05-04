@@ -13,9 +13,8 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
-//= require foundation
+//= require bootstrap
 //= require turbolinks
 //= require jquery.magnific-popup.min
+//= require masonry.min
 //= require_tree .
-
-$(function(){ $(document).foundation(); });

@@ -13,24 +13,24 @@
 
 ActiveRecord::Schema.define(version: 20150220193256) do
 
-  create_table "categories", force: true do |t|
-    t.string   "name", null: false
-    t.integer   "order", null: false
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       limit: 255, null: false
+    t.integer  "order",                  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,18 +38,18 @@ ActiveRecord::Schema.define(version: 20150220193256) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-  create_table "works", force: true do |t|
-    t.string   "name",                               null: false
+  create_table "works", force: :cascade do |t|
+    t.string   "name",               limit: 255,                null: false
     t.text     "description"
-    t.string   "size",                default: "",   null: false
-    t.integer  "category_id",                        null: false
+    t.string   "size",               limit: 255, default: "",   null: false
+    t.integer  "category_id",                                   null: false
     t.integer  "price"
-    t.boolean  "enabled",             default: true, null: false
-    t.integer  "order",               default: 0,    null: false
+    t.boolean  "enabled",                        default: true, null: false
+    t.integer  "order",                          default: 0,    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end

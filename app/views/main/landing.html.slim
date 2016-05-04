@@ -1,29 +1,15 @@
-#gallery
-  header
-    dl.sub-nav
-      dd.category-all
-        a.category.category-0{data-id=0} Все работы
-      - @categories.each do |c|
-        dd.category{class= "category-#{c.id}" data-id=c.id}
-          a= c.name
-      dd.info
-        = link_to 'Обо мне', action: :info
+.row
+  #nav.col-md-3
+    .row
+      ul.col-md-offset-2.col-md-10
+        li.category-all
+          a.category.category-0{href="" data-id=0} Все работы
+        - @categories.each do |c|
+          li.category{class= "category-#{c.id}" data-id=c.id}
+            a{href=""}= c.name
+        li.info
+          = link_to 'Обо мне', { action: :info }
 
-  #works.row
-    .buff
-      - @works.each do |w|
-        = render w
-    .col-1.columns.medium-4
-    .col-2.columns.medium-4
-    .col-3.columns.medium-4
-
-  .footer.row
-    .columns.medium-12
-      h2.words
-        | The E
-        span.art art
-        | h without
-        span.art  art
-        |  is just “Eh”
-
-#popup-modal.mfp-hide
+  #gallery.col-md-9
+    - @works.each_with_index do |w, i|
+      = render w

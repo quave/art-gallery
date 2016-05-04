@@ -3,7 +3,9 @@
 # start puma with:
 # RAILS_ENV=production bundle exec puma -C ./config/puma.rb
 
-workers ENV['SITE_WORK'].to_i || 2 
+return unless ENV['RAILS_ENV'] == 'production'
+
+workers ENV['SITE_WORK'].to_i || 2
 application_path = '/var/www/art-gallery'
 railsenv = 'production'
 directory application_path

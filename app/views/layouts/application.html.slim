@@ -1,19 +1,33 @@
 doctype html
-html[lang="en"]
+html lang="en"
   head
-    meta[charset="utf-8"]
-    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    meta charset="utf-8" /
+    meta content="IE=edge" http-equiv="X-UA-Compatible" /
+    meta content="width=device-width, initial-scale=1" name="viewport" /
+    /! The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+    meta content="Личная галерея" name="description" /
+    meta content="Алена Каневская" name="author" /
+    link href="../../favicon.ico" rel="icon" /
     title
-      = content_for?(:title) ? yield(:title) : 'Алена Каневская'
-    = stylesheet_link_tag    "application"
-    = javascript_include_tag "vendor/modernizr"
+      = content_for?(:title) ? yield(:title) : brand_name
+    = stylesheet_link_tag :application
     = csrf_meta_tags
   body{class="#{controller_name} #{action_name}"}
-    - if false
-      p.notice= notice if notice
-      p.alert= alert if alert
+    nav.navbar
+      .container-fluid
+        .navbar-brand.row
+          a.col-md-offset-2.brand{href="#"}= brand_name
 
-    = yield
-    = javascript_include_tag "application"
+    .container-fluid.content
+      - if false
+        p.notice= notice if notice
+        p.alert= alert if alert
+
+      = yield
+
+    footer.row-fluid
+      .col-xs-12
+
+    = javascript_include_tag :application
 
     =render partial: 'metrics' if Rails.env.production?

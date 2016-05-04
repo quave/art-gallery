@@ -14,8 +14,27 @@
  *= require magnific-popup
  */
 
-@import 'foundation_and_overrides';
-@import 'font-awesome';
+@import "font-awesome";
+@import "bootstrap-sprockets";
+
+$border-radius-base:        0;
+$border-radius-large:       0;
+$border-radius-small:       0;
+$navbar-height: 90px;
+$brand-success:         #0E9042;
+@import "bootstrap";
+
+
+@font-face {
+  font-family: 'Aquarelle';
+  src:url('Aquarelle.eot');
+  src:url('Aquarelle.eot?#iefix') format('embedded-opentype'),
+  url('Aquarelle.svg#icomoon') format('svg'),
+  url('Aquarelle.woff') format('woff'),
+  url('Aquarelle.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 html, body {
   width: 100%;
