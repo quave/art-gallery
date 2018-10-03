@@ -1,6 +1,8 @@
 .work{class="work-#{work.id} cat-#{work.category.id}" data-order=work.order}
   =image_tag work.image.url(:preview)
-  .info
+
+
+  .info.hide
     h5.name= work.name
     .desc= work.description unless work.description.blank?
     .size= work.size unless work.size.blank?

@@ -1,12 +1,12 @@
 User.create email: 'admin@admin.ru', password: 'Sophia0!'
 
 Category.create!([
-  {name: "Портрет", order: 0},
-  {name: "Натюрморт", order: 1},
-  {name: "Пейзаж", order: 2},
-  {name: "Графика", order: 3},
-  {name: "Этюды", order: 0},
-  {name: "Иллюстрация", order: 0}
+  {name: "Портрет", name_lat: "portraits", order: 0},
+  {name: "Натюрморт", name_lat: "still-life", order: 1},
+  {name: "Пейзаж", name_lat: 'landscapes', order: 2},
+  {name: "Графика", name_lat: 'drawings', order: 3},
+  {name: "Этюды", name_lat: 'sketches', order: 0},
+  {name: "Иллюстрация", name_lat: 'illustrations', order: 0}
 ])
 
 Work.create!([

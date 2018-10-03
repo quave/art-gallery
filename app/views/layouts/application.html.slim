@@ -23,7 +23,19 @@ html lang="en"
         p.notice= notice if notice
         p.alert= alert if alert
 
-      = yield
+      .row
+        #nav.col-md-2
+          .row
+            ul.col-md-offset-2.col-md-10
+              li.category-all
+                = link_to 'Все работы', root_path, { class: '.category.category-0' }
+              - @categories.each do |c|
+                li.category{class= "category-#{c.id}" data-id=c.id}
+                  =link_to c.name, { category: c.name_lat }
+              li.info
+                = link_to 'Обо мне', { action: :info }
+        .col-md-10
+          = yield
 
     footer.row-fluid
       .col-xs-12

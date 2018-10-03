@@ -3,6 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.main {
+  background: #644;
+   > * {
+     background: #fff;
+   }
+
+  .navbar {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+  }
+
+  .navbar-brand {
+    min-height: 120px;
+  }
+
   .brand {
     font-family: 'Aquarelle', serif;
     font-size: 50px;
@@ -13,37 +27,40 @@ body.main {
     line-height: .65em;
   }
 
+  #nav ul {
+    @extend .nav;
+    @extend .nav-pills;
+
+    // manual .nav-stacked
+    @media (min-width: $screen-md-min) {
+      > li {
+        float: none;
+        + li {
+          margin-top: 2px;
+          margin-left: 0; // no need for this gap between nav items
+        }
+      }
+    }
+
+    li {
+      @extend .clearfix;
+
+      a {
+        color: $text-color;
+      }
+    }
+  }
+
   &.landing {
 
     .content {
       padding-bottom: 30px;
     }
 
-    #nav ul {
-      @extend .nav;
-      @extend .nav-pills;
-
-      // manual .nav-stacked
-      @media (min-width: $screen-md-min) {
-        > li {
-          float: none;
-          + li {
-            margin-top: 2px;
-            margin-left: 0; // no need for this gap between nav items
-          }
-        }
-      }
-
-      li {
-        @extend .clearfix;
-
-        a {
-          color: $text-color;
-        }
-      }
-    }
-
     #gallery {
+      display: flex;
+      flex-wrap: wrap;
+
       .work {
         margin: 2rem;
         width: 250px;
@@ -93,7 +110,7 @@ body.main {
 
     footer {
       min-height: 70px;
-      background: #644;
+      background-color: transparent;
       box-shadow: inset 0 10px 10px -10px #000;
     }
 
@@ -120,8 +137,20 @@ body.main {
   &.info {
     background: #333139;
     color: #fff;
+    padding: 0 40px;
+
+    .brand { color: #fff; }
 
     h1, h2, h3, h4, h5, h6 { color: #888; }
+
+    #nav ul {
+      li a {
+        color: #fff;
+        &:hover {
+          background-color: #888;
+        }
+      }
+    }
 
     .me {
       margin: 2em 0;

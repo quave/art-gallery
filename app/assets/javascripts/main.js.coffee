@@ -10,13 +10,6 @@ setHash = (hash) ->
 $ ->
   return unless $('body').hasClass 'main'
 
-  $('#gallery').masonry({ itemSelector: '.work' })
-
-  $('#gallery header .category').click( ->
-    id = $(this).data('id')
-    arrangeWorks(id)
-  )
-
   $('#gallery .work').click( ->
     modal = $(this)
       .clone()

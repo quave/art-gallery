@@ -1,15 +1,3 @@
-.row
-  #nav.col-md-3
-    .row
-      ul.col-md-offset-2.col-md-10
-        li.category-all
-          a.category.category-0{href="" data-id=0} Все работы
-        - @categories.each do |c|
-          li.category{class= "category-#{c.id}" data-id=c.id}
-            a{href=""}= c.name
-        li.info
-          = link_to 'Обо мне', { action: :info }
-
-  #gallery.col-md-9
-    - @works.each_with_index do |w, i|
-      = render w
+#gallery
+  - @works.each_with_index do |w, i|
+    = render w

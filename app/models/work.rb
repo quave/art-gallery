@@ -10,7 +10,8 @@ class Work < ActiveRecord::Base
   scope :hidden, -> { where enabled: false }
 
   has_attached_file :image,
-                    :styles => { :preview => '250' },
+                    :styles => { :preview => '250x250#' },
+                    :convert_options => { :thumb => "-quality 75 -strip" },
                     :default_url => '/images/default.png'
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
