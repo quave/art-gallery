@@ -28,4 +28,3 @@ Work.create!([
   {name: "Натюрморт с мандолиной", description: "Холст, масло", size: "70х40см", category_id: 2, price: nil, enabled: true, image_file_name: "DSC_7950.jpg", image_content_type: "image/jpeg", image_file_size: 812535, image_updated_at: "2015-02-21 15:06:01"}
 ])
 
-

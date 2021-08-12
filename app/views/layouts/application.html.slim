@@ -10,8 +10,10 @@ html lang="en"
     link href="../../favicon.ico" rel="icon" /
     title
       = content_for?(:title) ? yield(:title) : brand_name
-    = stylesheet_link_tag :application
     = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+
   body{class="#{controller_name} #{action_name}"}
     nav.navbar
       .container-fluid
@@ -28,6 +30,6 @@ html lang="en"
     footer.row-fluid
       .col-xs-12
 
-    = javascript_include_tag :application
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
-    =render partial: 'metrics' if Rails.env.production?
+    = render partial: 'metrics' if Rails.env.production?

@@ -4,5 +4,5 @@
     h5.name= work.name
     .desc= work.description unless work.description.blank?
     .size= work.size unless work.size.blank?
-    span.price= work.price.nil? ? 'Продано' : "#{work.price}₽"
+    button.btn.btn-secondary.price[disabled]= work.price.nil? ? 'Продано' : "#{work.price}₽"
     button.btn.btn-success Хочу!

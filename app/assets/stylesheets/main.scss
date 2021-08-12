@@ -2,11 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// $grid-md: map-get($grid-breakpoints, "md");
+
+$form-text-color: #333;
+
 body.main {
   .brand {
     font-family: 'Aquarelle', serif;
     font-size: 50px;
-    color: $text-color;
+    color: $form-text-color;
     display: block;
     margin-top: 12px;
     text-decoration: none;
@@ -20,11 +24,7 @@ body.main {
     }
 
     #nav ul {
-      @extend .nav;
-      @extend .nav-pills;
-
-      // manual .nav-stacked
-      @media (min-width: $screen-md-min) {
+      @media (min-width: 768px) {
         > li {
           float: none;
           + li {
@@ -35,16 +35,15 @@ body.main {
       }
 
       li {
-        @extend .clearfix;
-
         a {
-          color: $text-color;
+          color: $form-text-color;
         }
       }
     }
 
     #gallery {
       .work {
+        display: inline-block;
         margin: 2rem;
         width: 250px;
         box-shadow: 3px 3px 5px 0 #999;
@@ -81,7 +80,6 @@ body.main {
           }
 
           .price {
-            @extend .btn;
             background: transparent;
             border: 1px solid #eee;
             margin-right: 1em;

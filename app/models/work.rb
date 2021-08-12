@@ -1,4 +1,4 @@
-class Work < ActiveRecord::Base
+class Work < ApplicationRecord
   belongs_to :category
   validates :name, presence: true
 
