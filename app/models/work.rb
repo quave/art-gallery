@@ -1,4 +1,4 @@
-class Work < ActiveRecord::Base
+class Work < ApplicationRecord
   belongs_to :category
   validates :name, presence: true
 
@@ -9,6 +9,13 @@ class Work < ActiveRecord::Base
   scope :shown, -> { where enabled: true }
   scope :hidden, -> { where enabled: false }
 
+  has_one_attached :image
+  #field :image, :active_storage
+  attr_accessor :remove_image
+  after_save { image.purge if remove_image == '1' }
+  #delete_method :remove_image
+
+=begin
   has_attached_file :image,
                     :styles => { :preview => '250' },
                     :default_url => '/images/default.png'
@@ -16,7 +23,7 @@ class Work < ActiveRecord::Base
 
   attr_accessor :delete_image
   before_validation { self.image.clear if self.delete_image == '1' }
-
+=end
   rails_admin do
     list do
       field :id
