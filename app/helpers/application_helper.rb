@@ -1,5 +1,5 @@
 module ApplicationHelper
   def brand_name
-    'Алёна Раевская'
+    'Alena Raevskaia'
   end
 end

@@ -5,8 +5,8 @@ html lang="en"
     meta content="IE=edge" http-equiv="X-UA-Compatible" /
     meta content="width=device-width, initial-scale=1" name="viewport" /
     /! The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
-    meta content="Личная галерея" name="description" /
-    meta content="Алена Каневская" name="author" /
+    meta content="Personal gallery" name="description" /
+    meta content=brand_name name="author" /
     link href="../../favicon.ico" rel="icon" /
     title
       = content_for?(:title) ? yield(:title) : brand_name
@@ -15,10 +15,10 @@ html lang="en"
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
 
   body{class="#{controller_name} #{action_name}"}
-    nav.navbar
+    nav
       .container-fluid
-        .navbar-brand.row
-          a.col-md-offset-2.brand{href="#"}= brand_name
+        .navbar-brand.row.justify-content-center
+          a.col-md-5.brand{href="#"}= brand_name
 
     .container-fluid.content
       - if false

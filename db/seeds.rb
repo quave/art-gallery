@@ -1,14 +1,15 @@
 User.create email: 'admin@admin.ru', password: 'Sophia0!'
 
 Category.create!([
-  {name: "Портрет", order: 0},
-  {name: "Натюрморт", order: 1},
-  {name: "Пейзаж", order: 2},
-  {name: "Графика", order: 3},
-  {name: "Этюды", order: 0},
-  {name: "Иллюстрация", order: 0}
+  {name: "Portrait", order: 0},
+  {name: "Still life", order: 1},
+  {name: "Landscape", order: 2},
+  {name: "Graphics", order: 3},
+  {name: "Etude", order: 0},
+  {name: "Illustrations", order: 0}
 ])
 
+=begin
 Work.create!([
   {name: "Этюд 1", description: "Белые ночи. Архангельская область.\r\nБумага, масляная пастель.", size: "25х30см", category_id: 5, price: nil, enabled: true, image_file_name: "DSC_2922.jpg", image_content_type: "image/jpeg", image_file_size: 2505455, image_updated_at: "2015-03-21 16:56:53"},
   {name: "Натюрморт Trompe-l'œil", description: "Холст, масло", size: "60х60см", category_id: 2, price: nil, enabled: true, image_file_name: "DSC_1079.jpg", image_content_type: "image/jpeg", image_file_size: 1014659, image_updated_at: "2015-02-21 17:17:57"},
@@ -27,4 +28,5 @@ Work.create!([
   {name: "Портрет дочери", description: "Бумага, красный и простой карандаши", size: "", category_id: 1, price: nil, enabled: true, image_file_name: "DSC_2718.jpg", image_content_type: "image/jpeg", image_file_size: 419860, image_updated_at: "2015-02-21 15:07:16"},
   {name: "Натюрморт с мандолиной", description: "Холст, масло", size: "70х40см", category_id: 2, price: nil, enabled: true, image_file_name: "DSC_7950.jpg", image_content_type: "image/jpeg", image_file_size: 812535, image_updated_at: "2015-02-21 15:06:01"}
 ])
+=end
 
