@@ -26,11 +26,11 @@ $brand-success:         #0E9042;
 
 @font-face {
   font-family: 'Aquarelle';
-  src:url('Aquarelle.eot');
-  src:url('Aquarelle.eot?#iefix') format('embedded-opentype'),
-  url('Aquarelle.svg#icomoon') format('svg'),
-  url('Aquarelle.woff') format('woff'),
-  url('Aquarelle.ttf') format('truetype');
+  src:font-url('Aquarelle.eot');
+  src:font-url('Aquarelle.eot?#iefix') format('embedded-opentype'),
+      font-url('Aquarelle.svg#icomoon') format('svg'),
+      font-url('Aquarelle.woff') format('woff'),
+      font-url('Aquarelle.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
