@@ -8,6 +8,8 @@ ENV RAILS_PORT 3003
 ENV RAILS_ENV production
 
 # install dependencies for application
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update && apt-get install -y build-essential nodejs yarn imagemagick tzdata gcc-9
 
 # copy entrypoint scripts and grant execution permissions
@@ -26,4 +28,4 @@ RUN bundle install
 EXPOSE $RAILS_PORT
 
 ENTRYPOINT [ "entrypoint.sh" ]
-CMD [ "bundle", "exec", "rails", "server", "-b", "0.0.0.0", "-p", $RAILS_PORT]
+CMD ["rails server -b 0.0.0.0 -p $RAILS_PORT"]
