@@ -4,7 +4,7 @@ ENV APP_PATH /app
 ENV BUNDLE_PATH /usr/local/bundle/gems
 ENV TMP_PATH /tmp/
 ENV RAILS_LOG_TO_STDOUT true
-ENV RAILS_PORT 3003
+ENV RAILS_PORT 3000
 ENV RAILS_ENV production
 
 # install dependencies for application
@@ -28,4 +28,4 @@ RUN bundle install
 EXPOSE $RAILS_PORT
 
 ENTRYPOINT [ "entrypoint.sh" ]
-CMD ["rails server -b 0.0.0.0 -p $RAILS_PORT"]
+CMD ["rails server -b 0.0.0.0 -p 3000"]
