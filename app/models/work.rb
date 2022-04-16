@@ -26,7 +26,7 @@ class Work < ApplicationRecord
 =end
   rails_admin do
     list do
-      field :id
+      field :order
       field :enabled
       field :image
       field :name
@@ -34,7 +34,7 @@ class Work < ApplicationRecord
       field :size
       field :category
       field :price
-      field :order
+      field :id
     end
     edit do
       field :enabled
