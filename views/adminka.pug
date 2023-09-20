@@ -1,0 +1,54 @@
+extends layout
+
+block style
+
+block content
+  .row.justify-content-center
+    #categories.col-sm-4
+      form(method="post" action="/adminka/category").row
+        .col-sm-5
+          input(type="text" name="name" placeholder="name").form-control
+        .col-sm-5
+          input(type="number" name="order" placeholder="order").form-control
+        .col-sm-2
+          button(type="submit" class="btn btn-primary") Add
+
+      table.table
+        thead
+          tr
+            th(scope="col") id
+            th(scope="col") name
+            th(scope="col") order
+            td
+        tbody
+          each c in categories
+            tr
+              th(scope="row")= c.id
+              td= c.name
+              td= c.order
+              td
+                form(method="POST" action="/adminka/category/d")
+                  button(type="submit" name="id" value=c.id class="btn btn-danger btn-sm")
+                    i.fa.fa-remove
+
+  .row.justify-content-center
+    #works.col-sm-4
+      form(method="post" action="/adminka/work" enctype="multipart/form-data")
+        select(name="categoryId" placeholder="categoryId").form-control
+          each c in categories
+            option(value=c.id)= c.name
+        input(type="text" name="name" placeholder="name").form-control
+        input(type="text" name="description" placeholder="description").form-control
+        input(type="text" name="size" placeholder="size").form-control
+        input(type="number" name="price" placeholder="price").form-control
+        input(type="number" name="order" placeholder="order").form-control
+        input(type="file" name="image" accept="image/png, image/jpeg" placeholder="image").form-control
+        button(type="submit" class="btn btn-primary") Add
+
+      ul(style="max-width:100%")
+        each w in works
+          li
+            form(method="POST" action="/adminka/work/d")
+              button(type="submit" name="id" value=w.id class="btn btn-danger btn-sm")
+                i.fa.fa-remove
+            img(src='/images/works/' + w.image style="max-width: 100%;")

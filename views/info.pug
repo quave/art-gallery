@@ -1,0 +1,21 @@
+extends layout
+
+block style
+  link(rel='stylesheet', href='/stylesheets/main.css')
+
+block content
+  .row
+    .col-md-2
+        a(href='/')= 'Back'
+    .col-md-10.contacts
+      h4 Contacts
+      dl
+        dt Email
+        dd
+          a(href="mailto:alyonakanevskaya@gmail.com") 
+            i.fa.fa-envelope-open
+            | &nbsp;alyonakanevskaya@gmail.com
+        dt Skype
+        dd
+          i.fa.fa-skype
+          | &nbsp;alonkanevslaya

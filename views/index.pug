@@ -1,0 +1,33 @@
+extends layout
+
+block style
+  link(rel='stylesheet', href='/stylesheets/main.css')
+
+mixin work(w)
+  .work(class=`work-${w.id} cat-${w.categoryId}`, data-order=w.order)
+    img(src= '/images/works/' + w.image)
+    .info
+      h5.name= w.name
+      if w.description
+        .desc= w.description
+      if w.size
+        .size= w.size
+      button.btn.btn-secondary.price(disabled)= !w.price ? 'Sold' : w.price + "€"
+      button.btn.btn-success Contact
+
+block content
+  .row.justify-content-center
+    #nav.col-md-2
+      .row
+        ul.nav.nav-pills.flex-column.col-md-offset-2.col-md-10
+          li.nav-item.category.category-all
+            a.nav-link(href="/" data-id=0) All works
+          each c in categories
+            li.nav-item.category(class= "category-"+c.id data-id=c.id)
+              a.nav-link(href="/"+c.id)= c.name
+          li.nav-item.info
+            a( href="/info", class="nav-link")= "About the artist"
+
+    #gallery.col-md-4
+      each w in works
+        +work(w)

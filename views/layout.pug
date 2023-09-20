@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    block style
+  body(class= 'main ' + (action ? action : '')) 
+    nav.navbar.navbar-expand-lg.bg-body-tertiary
+      .container-fluid
+        .navbar-brand.row.justify-content-center
+          a.col-md-5.brand(href="#")= title
+
+    .container-fluid.content
+      block content
+    
+    footer.row-fluid
+      .col-xs-12
+
+    include metrics.html

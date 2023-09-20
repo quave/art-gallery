@@ -1,0 +1,22 @@
+extends layout
+
+block style
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.0.2/sha.js")
+  script.
+    function hash(obj) {
+      var pwdObj = document.getElementById('secret');
+      var text = document.getElementById('salt').value + pwdObj.value
+      var hashObj = new jsSHA("SHA-512", "TEXT", {numRounds: 1});
+      hashObj.update(text);
+      var hash = hashObj.getHash("HEX");
+      pwdObj.value = hash;
+    }
+
+block content
+  .row.justify-content-center
+    if error401
+      h3= error401
+    form(class="col-md-2" method="post" action="auth")
+      input(type="hidden" name="salt" id="salt" value=salt)
+      input(type="password" name="secret" id="secret")
+      input(type="submit" text="Let me in" onclick="javascript:return hash(this);").btn.btn-primary
